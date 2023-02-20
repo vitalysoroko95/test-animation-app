@@ -1,0 +1,47 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-typescript/base"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": "off",
+    "react/destructuring-assignment": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-underscore-dangle": "off",
+    "arrow-body-style": ["error", "as-needed"],
+    "import/extensions": "off",
+    "no-unused-vars": "error",
+    "linebreak-style": "off",
+    "@typescript-eslint/indent": "off",
+    "no-duplicate-imports": "error",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^(react|styled-components|react-router-dom|react-redux|redux-thunk|redux|react-localization|react-bottom-scroll-listener|react-dnd|react-dnd-html5-backend|@nivo/bar|@faker-js/faker|ky|@storybook/react|storybook-addon-react-router-v6)$/",
+          "/^validator/",
+          "/^@/",
+          "/(^#styles)|(^./styles)/",
+          "/^#components/",
+          "/^#stories/",
+          "/^#localization/",
+          "/^#services/",
+          "/^#store/",
+          "/^#utils/",
+          "/^#hooks/",
+          "/^#routing/",
+          ["parent", "sibling", "index"],
+          "absolute"
+        ]
+      }
+    ]
+  }
+}
